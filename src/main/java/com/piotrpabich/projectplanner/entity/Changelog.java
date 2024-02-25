@@ -1,6 +1,7 @@
 package com.piotrpabich.projectplanner.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.piotrpabich.projectplanner.enums.Action;
 import jakarta.persistence.*;
 import lombok.*;
 
