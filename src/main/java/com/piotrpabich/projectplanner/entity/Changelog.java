@@ -26,8 +26,8 @@ public class Changelog {
     @Enumerated(EnumType.STRING)
     private Action action;
 
-    @ManyToOne
-    private User user;
+//    @ManyToOne
+//    private User user;
 
     @JsonProperty("additional_information")
     private String additionalInformation;

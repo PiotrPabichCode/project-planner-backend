@@ -15,7 +15,7 @@ public class ProjectUser {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     private User user;
 
     @ManyToOne

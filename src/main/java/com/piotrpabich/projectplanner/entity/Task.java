@@ -23,17 +23,19 @@ public class Task {
 
     private String description;
 
-    @OneToMany
+    @ManyToMany
     private List<TaskCategory> categories;
 
     @ManyToOne
     private Project project;
 
     @ManyToOne
-    private User createdBy;
+    @JsonProperty("created_by")
+    private ProjectUser createdBy;
 
     @OneToMany
-    private List<User> assignedTo;
+    @JsonProperty("assigned_to")
+    private List<ProjectUser> assignedTo;
 
     @JsonProperty("is_important")
     private Boolean isImportant;
@@ -47,6 +49,6 @@ public class Task {
     @JsonProperty("updated_at")
     private Date updatedAt;
 
-    @OneToMany
+    @OneToMany(mappedBy = "task")
     private List<Note> notes;
 }

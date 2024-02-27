@@ -1,5 +1,6 @@
 package com.piotrpabich.projectplanner.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
@@ -33,4 +34,8 @@ public class Note {
 
     @ManyToOne
     private Project project;
+
+    @JsonIgnore
+    @ManyToOne
+    private Task task;
 }

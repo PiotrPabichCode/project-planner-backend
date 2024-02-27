@@ -1,5 +1,6 @@
 package com.piotrpabich.projectplanner.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -38,9 +40,13 @@ public class User {
 
     private String role;
 
-    @OneToMany
-    private List<User> friends;
+//    @JsonIgnore
+//    @OneToMany(mappedBy = "user")
+//    private List<Changelog> changelog;
 
-    @OneToMany
-    private List<Project> projects;
+    @ManyToMany
+    private List<User> friends;
+//
+//    @OneToMany
+//    private List<Project> projects;
 }
